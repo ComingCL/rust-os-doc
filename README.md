@@ -40,3 +40,12 @@
 - 龙方淞 (@longfangsong)，上海大学开源社区
 - readlnh (@readlnh)
 - 尚卓燃 (@psiace)，华中农业大学
+
+## notice
+```
+rustc --version
+rustc 1.89.0-nightly (16d2276fa 2025-05-16)
+
+cargo --version
+cargo 1.89.0-nightly (47c911e9e 2025-05-14)
+```
