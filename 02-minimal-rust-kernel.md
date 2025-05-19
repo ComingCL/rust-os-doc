@@ -250,7 +250,7 @@ build-std = ["core", "compiler_builtins"]
 
 ### 设置默认编译目标
 
-为了避免每次使用`cargo xbuild`时传递`--target`参数，我们可以覆写默认的编译目标。我们创建一个名为`.cargo/config`的[cargo配置文件](https://doc.rust-lang.org/cargo/reference/config.html)，添加下面的内容：
+为了避免每次使用`cargo build`时传递`--target`参数，我们可以覆写默认的编译目标。我们创建一个名为`.cargo/config`的[cargo配置文件](https://doc.rust-lang.org/cargo/reference/config.html)，添加下面的内容：
 
 ```toml
 # in .cargo/config
@@ -262,7 +262,7 @@ target = "x86_64-blog_os.json"
 这里的配置告诉`cargo`在没有显式声明目标的情况下，使用我们提供的`x86_64-blog_os.json`作为目标配置。这意味着保存后，我们可以直接使用：
 
 ```text
-cargo xbuild
+cargo build
 ```
 
 来编译我们的内核。[官方提供的一份文档](https://doc.rust-lang.org/cargo/reference/config.html)中有对cargo配置文件更详细的说明。
@@ -389,7 +389,7 @@ runner = "bootimage runner"
 
 命令`bootimage runner`由`bootimage`包提供，参数格式经过特殊设计，可以用于`runner`命令。它将给定的可执行文件与项目的引导程序依赖项链接，然后在QEMU中启动它。`bootimage`包的[README文档](https://github.com/rust-osdev/bootimage)提供了更多细节和可以传入的配置参数。
 
-现在我们可以使用`cargo run`来编译内核并在QEMU中启动了。和`xbuild`类似，`xrun`子命令将在调用cargo命令前编译内核所需的包。这个子命令也由`cargo-xbuild`工具提供，所以你不需要安装额外的工具。
+现在我们可以使用`cargo run`来编译内核并在QEMU中启动了。
 
 ## 下篇预告
 
